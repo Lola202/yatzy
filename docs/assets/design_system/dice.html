@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yatzy Game Design System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .dice-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .dice {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            border: 2px solid #333;
+            border-radius: 10px;
+        }
+        .game-component {
+            margin: 20px 0;
+        }
+        .header, .footer {
+            background-color: #f8f8f8;
+            padding: 10px;
+            text-align: center;
+        }
+        .game-board {
+            border: 2px solid #333;
+            padding: 20px;
+            text-align: center;
+        }
+        .scoreboard {
+            margin: 20px 0;
+            padding: 10px;
+            border: 2px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>Yatzy Game Design System</h1>
+
+    <h2>Dice</h2>
+    <div class="dice-container">
+        <div class="dice">1</div>
+        <div class="dice">2</div>
+        <div class="dice">3</div>
+        <div class="dice">4</div>
+        <div class="dice">5</div>
+        <div class="dice">6</div>
+    </div>
+    <p>The dice have a standard six-sided design with numbers from 1 to 6. They are styled with a border and a rounded appearance.</p>
+
+    <h2>Game Components</h2>
+
+    <div class="game-component">
+        <h3>Starting a New Game</h3>
+        <button>Start New Game</button>
+        <p>A button to start a new game, resetting all game state and scores.</p>
+    </div>
+
+    <div class="game-component">
+        <h3>In-Game Play</h3>
+        <div class="game-board">
+            <p>Dice: [1, 2, 3, 4, 5]</p>
+            <button>Roll Dice</button>
+            <button>Keep Dice</button>
+        </div>
+        <p>The game board includes the current state of the dice and controls to roll or keep dice.</p>
+    </div>
+
+    <div class="game-component">
+        <h3>Scoreboard</h3>
+        <div class="scoreboard">
+            <p>Player 1: 150</p>
+            <p>Player 2: 200</p>
+        </div>
+        <p>The scoreboard displays the scores of all players, updated in real-time.</p>
+    </div>
+
+    <div class="game-component">
+        <h3>End of the Game</h3>
+        <p>The game concludes with a message displaying the winner and final scores. A button is available to start a new game.</p>
+        <button>Start New Game</button>
+    </div>
+
+    <div class="header">
+        <h3>Header</h3>
+        <p>The header includes the game title</p>
+    </div>
+
+    <div class="footer">
+        <h3>Footer</h3>
+        <p>The footer include credits, contact information, and additional links.</p>
+    </div>
+</body>
+</html>
