@@ -1,8 +1,9 @@
+/*Initiates a new game */
 function createNewGame() {
     return {
         currentRoll: 0,
         diceValues: [1, 1, 1, 1, 1],
-        keepDice: [false, false, false, false, false],
+        keepDie: [false, false, false, false, false],
         score: 0,
         bonus: 0,
         scorecard: {
@@ -18,35 +19,38 @@ function createNewGame() {
         }
     };
 }
-function rollDiceForGame(game) {
-    game.currentRoll++;
-    game.diceValues = rollDice();
-    updateGameDisplay(game);
+
+//Roll dice on the html page
+function rollDiceForGame() {
+    if (game.currentRoll < 3) {
+        game.diceValues = rollDice(game.keepDie);
+        game.currentRoll++;
+        updateGameDisplay(game);
+    } else {
+        alert("You have already rolled three times. Please score your turn.");
+    }
 }
+
+//toggle re-roll or keep dice
+function toggleKeep(index) {
+    game.keepDie[index] = !game.keepDie[index];
+    updateDiceDisplay(game.diceValues);
+}
+
+
+ //Updates scores on html page
 function updateGameDisplay(game) {
     updateDiceDisplay(game.diceValues);
     document.getElementById('overall-score').innerText = `Overall Score: ${game.score}`;
     document.getElementById('score-ones').innerText = `Ones: ${game.scorecard.ones}`;
 }
 
-function scoreOnes(game) {
-    const onesScore = game.diceValues.filter(die => die === 1).length;
-    game.scorecard.ones = onesScore;
-    game.scorecard.total += onesScore;
+//Calculates score for a box
+function scoreTurn(box) {
+    const score = calculateScoreForBox(game, box);
+    game.scorecard[box] = score;
+    game.currentRoll = 0;
+    game.keepDie = [false, false, false, false, false];
     updateOverallScore(game);
+    updateGameDisplay(game);
 }
-
-function updateOverallScore(game) {
-    game.score = game.scorecard.total;
-    if (game.scorecard.total >= 63) {
-        game.bonus = 35;
-    }
-    game.scorecard.overall = game.score + game.bonus;
-    document.getElementById('overall-score').innerText = `Overall Score: ${game.scorecard.overall}`;
-}
-
-const gameState = {
-    rollNumber : 0,  // 0 to 3
-    dice: [1,1,1,1,1],
-    keep: [false, false, false, false, false,]
-};

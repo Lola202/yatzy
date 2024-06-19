@@ -16,22 +16,24 @@
         </header>
         <main>
             <div class="dice">
-                <div class="die" id="die1"></div>
-                <div class="die" id="die2"></div>
-                <div class="die" id="die3"></div>
-                <div class="die" id="die4"></div>
-                <div class="die" id="die5"></div>
+                <div class="die" id="die1" onclick="toggleKeep(0)"></div>
+                <div class="die" id="die2" onclick="toggleKeep(1)"></div>
+                <div class="die" id="die3" onclick="toggleKeep(2)"></div>
+                <div class="die" id="die4" onclick="toggleKeep(3)"></div>
+                <div class="die" id="die5" onclick="toggleKeep(4)"></div>
             </div>
-            <button onclick="rollDice()">Roll Dice</button>
+            <button onclick="rollDiceForGame()">Roll Dice</button>
+            <button onclick="scoreTurn('ones')">Score Ones</button>
             <div class="scoreboard">
-            <h2>Scoreboard</h2>
-            <div id="score-ones">Ones: 0</div>
-            <div id="overall-score">Overall Score: 0</div>
+                <h2>Scoreboard</h2>
+                <div id="score-ones">Ones: 0</div>
+                <div id="overall-score">Overall Score: 0</div>
+                <div id="bonus">Bonus: 0</div>
             </div>
         </main>
         <footer>
             <p>contact: abline2002@gmail.com</p>
-            <p> jamesbillinger@canadaloyalty</p>
+            <p> jamesbillinger@canadaloyalty.com</p>
         </footer>
         <script>
             const game = createNewGame();

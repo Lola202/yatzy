@@ -17,13 +17,17 @@ function calculateScoreForBox(game, box) {
     }
 }
 
-function updateGameScore(game) {
-    let upperSectionScore = game.scorecard.ones + game.scorecard.twos + game.scorecard.threes +
-                            game.scorecard.fours + game.scorecard.fives + game.scorecard.sixes;
-
+function updateOverallScore(game) {
+    let upperSectionScore = 0;
+    for (let key in game.scorecard) {
+        if (['ones', 'twos', 'threes', 'fours', 'fives', 'sixes'].includes(key) && game.scorecard[key] !== null) {
+            upperSectionScore += game.scorecard[key];
+        }
+    }
     game.scorecard.total = upperSectionScore;
     game.scorecard.bonus = upperSectionScore >= 63 ? 35 : 0;
-    game.scorecard.overall = upperSectionScore + game.scorecard.bonus;
+    game.scorecard.overall = game.scorecard.total + game.scorecard.bonus;
 
-    document.getElementById('overall-score').innerText = `Overall Score: ${game.scorecard.overall}`;
+    document.getElementById('score-ones').innerText = game.scorecard.ones || 0;
+    document.getElementById('overall-score').innerText = game.scorecard.overall;
 }

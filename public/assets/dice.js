@@ -1,13 +1,20 @@
-function rollDice() {
+function rollDice(diceReroll) {
     const dice = [];
     for (let i = 0; i < 5; i++) {
-        dice[i] = Math.floor(Math.random() * 6) + 1;
+        if (game.keepDie[i]) {
+            dice[i] = game.diceValues[i];
+        } else {
+            dice[i] = Math.floor(Math.random() * 6) + 1;
+        }
     }
-    updateDiceDisplay(dice);
-    return dice;;
+    return dice;
 }
+
+//update dice display to highlight kept dice
 function updateDiceDisplay(dice) {
     for (let i = 0; i < 5; i++) {
-        document.getElementById(`die${i + 1}`).innerText = dice[i];
+        const dieElement = document.getElementById(`die${i + 1}`);
+        dieElement.innerText = dice[i];
+        dieElement.style.backgroundColor = game.keepDie[i] ? 'yellow' : 'white';
     }
 }
