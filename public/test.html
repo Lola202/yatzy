@@ -1,7 +1,40 @@
-<!DOCTYPE html><html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Yatzy Game</title>
+        <link rel="stylesheet" href="test.css">
         <script src="assets/dice.js"></script>
         <script src="assets/yatzy_engine.js"></script>
         <script src="assets/yatzy_game.js"></script>
     </head>
+    
+    <body>
+        <header>
+            <h1>Yatzy Game</h1>
+        </header>
+        <main>
+            <div class="dice">
+                <div class="die" id="die1"></div>
+                <div class="die" id="die2"></div>
+                <div class="die" id="die3"></div>
+                <div class="die" id="die4"></div>
+                <div class="die" id="die5"></div>
+            </div>
+            <button onclick="rollDice()">Roll Dice</button>
+            <div class="scoreboard">
+            <h2>Scoreboard</h2>
+            <div id="score-ones">Ones: 0</div>
+            <div id="overall-score">Overall Score: 0</div>
+            </div>
+        </main>
+        <footer>
+            <p>contact: abline2002@gmail.com</p>
+            <p> jamesbillinger@canadaloyalty</p>
+        </footer>
+        <script>
+            const game = createNewGame();
+        </script>
+    </body>
 </html>
