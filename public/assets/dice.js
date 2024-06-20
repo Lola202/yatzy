@@ -10,7 +10,7 @@ function rollDice(diceReroll) {
     return dice;
 }
 
-//update dice display to highlight kept dice
+//update dice display and highlights kept dice
 function updateDiceDisplay(dice) {
     for (let i = 0; i < 5; i++) {
         const dieElement = document.getElementById(`die${i + 1}`);

@@ -24,11 +24,51 @@
             </div>
             <button onclick="rollDiceForGame()">Roll Dice</button>
             <button onclick="scoreTurn('ones')">Score Ones</button>
+            <button onclick="scoreTurn('twos')">Score Twos</button>
+            <button onclick="scoreTurn('threes')">Score Threes</button>
+            <button onclick="scoreTurn('fours')">Score Fours</button>
+            <button onclick="scoreTurn('fives')">Score Fives</button>
+            <button onclick="scoreTurn('sixes')">Score Sixes</button>
             <div class="scoreboard">
                 <h2>Scoreboard</h2>
-                <div id="score-ones">Ones: 0</div>
-                <div id="overall-score">Overall Score: 0</div>
-                <div id="bonus">Bonus: 0</div>
+                <table>
+                    <tr>
+                        <th>Category</th>
+                        <th>Score</th>
+                    </tr>
+                    <tr>
+                        <td>Ones</td>
+                        <td id="score-ones">-</td>
+                    </tr>
+                    <tr>
+                        <td>Twos</td>
+                        <td id="score-twos">-</td>
+                    </tr>
+                    <tr>
+                        <td id="threes" class="cell">Threes</td>
+                        <td id="score-threes">-</td>
+                    </tr>
+                    <tr>
+                        <td id="fours" class="cell">Fours</td>
+                        <td id="score-fours">-</td>
+                    </tr>
+                    <tr>
+                        <td id="fives" class="cell">Fives</td>
+                        <td id="score-fives">-</td>
+                    </tr>
+                    <tr>
+                        <td id="sixes" class="cell">Sixes</td>
+                        <td id="score-sixes">-</td>
+                    </tr>
+                    <tr>
+                        <td>Bonus</td>
+                        <td id="bonus">0</td>
+                    </tr>
+                    <tr>
+                        <td>Overall Score</td>
+                        <td id="overall-score">0</td>
+                    </tr>
+                </table>
             </div>
         </main>
         <footer>

@@ -41,8 +41,14 @@ function toggleKeep(index) {
  //Updates scores on html page
 function updateGameDisplay(game) {
     updateDiceDisplay(game.diceValues);
-    document.getElementById('overall-score').innerText = `Overall Score: ${game.score}`;
-    document.getElementById('score-ones').innerText = `Ones: ${game.scorecard.ones}`;
+    document.getElementById('bonus').innerText = `${game.scorecard.bonus}`;
+    document.getElementById('overall-score').innerText = `${game.scorecard.overall}`;
+    document.getElementById('score-ones').innerText = `${game.scorecard.ones}`;
+    document.getElementById('score-twos').innerText = `${game.scorecard.twos}`;
+    document.getElementById('score-threes').innerText = `${game.scorecard.threes}`;
+    document.getElementById('score-fours').innerText = `${game.scorecard.fours}`;
+    document.getElementById('score-fives').innerText = `${game.scorecard.fives}`;
+    document.getElementById('score-sixes').innerText = `${game.scorecard.sixes}`;
 }
 
 //Calculates score for a box
